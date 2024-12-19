@@ -96,10 +96,30 @@ function playRound(humanChoice, computerChoice) {
   Human Score: ${humanScore}
   Computer Score: ${computerScore}
   `;
-  
 
-  return winner;
+  if (humanScore == 5 || computerScore == 5) {
+    let message = "";
+  
+    if (humanScore == 5) {
+      message = "YOU WIN THE GAME!";
+    } else {
+      message = "YOU LOSE THE GAME!";
+    }
+  
+    const container = document.querySelector("#container");
+    const finalMessage = document.createElement("div");
+  
+    finalMessage.textContent = message;
+    container.appendChild(finalMessage);
+  
+    humanScore = 0;
+    computerScore = 0;
+  
+  }
+  
 }
+
+
 
 // function playGame() {
 //   let humanScore = 0;
