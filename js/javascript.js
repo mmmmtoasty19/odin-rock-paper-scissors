@@ -80,33 +80,33 @@ function playRound(humanChoice, computerChoice) {
   return winner;
 }
 
-function playGame() {
-  let humanScore = 0;
-  let computerScore = 0;
+// function playGame() {
+//   let humanScore = 0;
+//   let computerScore = 0;
   
-  let round = 0;
+//   let round = 0;
 
-  while (round < 5) {
-    let winner = playRound(getHumanChoice(), getComputerChoice());
-    if (winner == 'human'){
-      humanScore++; 
-    }
-    if (winner == 'computer') {
-      computerScore++;
-    }
+//   while (round < 5) {
+//     let winner = playRound(getHumanChoice(), getComputerChoice());
+//     if (winner == 'human'){
+//       humanScore++; 
+//     }
+//     if (winner == 'computer') {
+//       computerScore++;
+//     }
 
-    round++
-  }
+//     round++
+//   }
 
-  let gameWinner = humanScore > computerScore ? "You Win" : " You Lose"
-  let message = `
-    Game Over,
-    Final Scores:
-    Human: ${humanScore} Computer: ${computerScore}
-    ${gameWinner}
-  `
+//   let gameWinner = humanScore > computerScore ? "You Win" : " You Lose"
+//   let message = `
+//     Game Over,
+//     Final Scores:
+//     Human: ${humanScore} Computer: ${computerScore}
+//     ${gameWinner}
+//   `
 
-  console.log(message)
-}
+//   console.log(message)
+// }
 
-playGame()
+// playGame()
