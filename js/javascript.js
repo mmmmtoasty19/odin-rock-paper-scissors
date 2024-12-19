@@ -1,3 +1,5 @@
+const buttons = document.querySelectorAll("button")
+
 
 /**
  * Gets the computer choice for Rock Paper Scissors game
@@ -28,16 +30,24 @@ function getComputerChoice() {
  * Gets the human choice for Rock Paper Scissors game
  * @returns {string} the human choice
  */
-function getHumanChoice() {
-  let humanChoice = prompt("Enter your Choice: Rock, Paper, or Scissors").toLowerCase();
+// function getHumanChoice() {
+//   let humanChoice = prompt("Enter your Choice: Rock, Paper, or Scissors").toLowerCase();
 
-  if (!['rock','paper','scissors'].includes(humanChoice)) {
-    alert("Enter a Valid Choice");
-    humanChoice = prompt("Enter your Choice: Rock, Paper, or Scissors").toLowerCase();
-  };
+//   if (!['rock','paper','scissors'].includes(humanChoice)) {
+//     alert("Enter a Valid Choice");
+//     humanChoice = prompt("Enter your Choice: Rock, Paper, or Scissors").toLowerCase();
+//   };
 
-  return humanChoice;
-}
+//   return humanChoice;
+// }
+
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    playRound(button.id, getComputerChoice())
+  })
+})
+
 
 /**
  * plays a single round of the game
