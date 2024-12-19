@@ -1,5 +1,8 @@
 const buttons = document.querySelectorAll("button")
 
+let humanScore = 0;
+let computerScore = 0;
+
 
 /**
  * Gets the computer choice for Rock Paper Scissors game
@@ -56,37 +59,45 @@ buttons.forEach((button) => {
 
 function playRound(humanChoice, computerChoice) {
   let message = "";
-  let winner = "";
+  // let winner = "";
 
   if (humanChoice == computerChoice) {
     message = "You Tied! " + humanChoice + " ties " + computerChoice
   } else if (humanChoice == 'rock') {
     if (computerChoice == "scissors") {
       message = "You win! " + humanChoice + " beats " + computerChoice;
-      winner = 'human'
+      humanScore++
     } else {
       message = "You lose! " + computerChoice + " beats" + humanChoice;
-      winner = 'computer'
+      computerScore++
     }
   } else if (humanChoice == 'paper') {
     if (computerChoice == 'rock') {
       message = "You win! " + humanChoice + " beats " + computerChoice;
-      winner = 'human'
+      humanScore++
     } else {
       message = "You lose! " + computerChoice + " beats " + humanChoice;
-      winner = 'computer'
+      computerScore++
     }
   } else {
     if (computerChoice == 'paper') {
       message = "You win! " + humanChoice + " beats " + computerChoice;
-      winner = 'human'
+      humanScore++
     } else {
       message = "You lose! " + computerChoice + " beats " + humanChoice;
-      winner = 'computer'
+      computerScore++
     }
   }
+
+  const scoreContainer = document.querySelector("#scores");
+
+  scoreContainer.textContent = `
+  ${message}
+  Human Score: ${humanScore}
+  Computer Score: ${computerScore}
+  `;
   
-  console.log(message);
+
   return winner;
 }
 
